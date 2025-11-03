@@ -1,0 +1,194 @@
+<div class="home">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-background">
+      <!-- Étoiles scintillantes -->
+      <div class="stars"></div>
+      
+      <!-- Particules IA flottantes -->
+      <div class="ai-particles">
+        <div class="particle" *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]"></div>
+      </div>
+      
+      <!-- Réseau neuronal -->
+      <div class="neural-network">
+        <div class="node" *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]"></div>
+      </div>
+      
+      <!-- Orbes de gradient originaux -->
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+      <div class="gradient-orb orb-3"></div>
+    </div>
+    
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title animate-fade-in">
+          {{ translate('hero.title') }}
+        </h1>
+        <p class="hero-subtitle animate-fade-in-delay">
+          {{ translate('hero.subtitle') }}
+        </p>
+        <div class="hero-buttons animate-fade-in-delay-2">
+          <a routerLink="/contact" class="btn btn-primary pulse-btn">
+            {{ translate('hero.cta') }}
+            <span class="btn-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data Intelligence Section -->
+  <section class="data-intelligence">
+    <div class="container">
+      <div class="intelligence-content">
+        <div class="intelligence-text scroll-reveal" data-reveal="fade-up">
+          <h2 class="intelligence-title">
+            {{ translate('intelligence.title') }}
+          </h2>
+          <p class="intelligence-subtitle">
+            {{ translate('intelligence.subtitle') }}
+          </p>
+        </div>
+        
+        <div class="intelligence-stats">
+          <div class="stat-card scroll-reveal" data-reveal="fade-up" data-delay="0.1">
+            <div class="stat-value">80%</div>
+            <div class="stat-label">{{ translate('intelligence.engagement') }}</div>
+          </div>
+          <div class="stat-card scroll-reveal" data-reveal="fade-up" data-delay="0.2">
+            <div class="stat-value">40+</div>
+            <div class="stat-label">{{ translate('intelligence.connectors') }}</div>
+          </div>
+          <div class="stat-card scroll-reveal" data-reveal="fade-up" data-delay="0.3">
+            <div class="stat-value">25%</div>
+            <div class="stat-label">{{ translate('intelligence.timesaved') }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Preview -->
+  <section class="features-preview">
+    <div class="container">
+      <div class="section-header scroll-reveal" data-reveal="fade-up">
+        <span class="section-tag">Fonctionnalités</span>
+        <h2 class="section-title">{{ translate('features.title') }}</h2>
+        <p class="section-subtitle">Des outils puissants pour transformer votre entreprise</p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card scroll-reveal" data-reveal="zoom-in" 
+             [attr.data-delay]="(i * 0.1)"
+             *ngFor="let feature of features; let i = index">
+          <div class="feature-icon-wrapper">
+            <div class="feature-icon">{{ feature.icon }}</div>
+            <div class="feature-glow"></div>
+          </div>
+          <h3>{{ translate(feature.titleKey) }}</h3>
+          <p>{{ translate(feature.descKey) }}</p>
+          <div class="feature-link">
+            <a routerLink="/features">En savoir plus →</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="cta-section scroll-reveal" data-reveal="fade-up">
+        <a routerLink="/features" class="btn btn-outline btn-large">
+          Découvrir toutes les fonctionnalités
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="why-choose">
+    <div class="container">
+      <div class="why-content">
+        <div class="why-text scroll-reveal" data-reveal="slide-right">
+          <span class="section-tag">Pourquoi H&I ?</span>
+          <h2>La solution IA complète pour votre entreprise</h2>
+          <p class="lead-text">H&I combine puissance et simplicité pour vous offrir la meilleure expérience d'IA générative du marché.</p>
+          
+          <ul class="benefits-list">
+            <li class="benefit-item scroll-reveal" data-reveal="slide-right" data-delay="0.1">
+              <div class="benefit-icon">
+                <span>⚡</span>
+              </div>
+              <div>
+                <strong>Technologie Avancée</strong>
+                <p>Solution propriétaire développée avec les dernières innovations en IA</p>
+              </div>
+            </li>
+            <li class="benefit-item scroll-reveal" data-reveal="slide-right" data-delay="0.2">
+              <div class="benefit-icon">
+                <span>🔒</span>
+              </div>
+              <div>
+                <strong>Sécurité Maximale</strong>
+                <p>Vos données restent privées avec un chiffrement de bout en bout</p>
+              </div>
+            </li>
+            <li class="benefit-item scroll-reveal" data-reveal="slide-right" data-delay="0.3">
+              <div class="benefit-icon">
+                <span>🎯</span>
+              </div>
+              <div>
+                <strong>Multi-LLM Intelligent</strong>
+                <p>Compatible avec GPT-4, Claude, Mistral et plus encore</p>
+              </div>
+            </li>
+            <li class="benefit-item scroll-reveal" data-reveal="slide-right" data-delay="0.4">
+              <div class="benefit-icon">
+                <span>💼</span>
+              </div>
+              <div>
+                <strong>Support Premium</strong>
+                <p>Équipe d'experts disponible pour vous accompagner</p>
+              </div>
+            </li>
+          </ul>
+          
+          <div class="cta-inline scroll-reveal" data-reveal="fade-up" data-delay="0.5">
+            <a routerLink="/contact" class="btn btn-primary">
+              Demander une démo →
+            </a>
+          </div>
+        </div>
+        
+        <div class="why-image scroll-reveal" data-reveal="slide-left">
+          <div class="stats-card floating-card card-1">
+            <div class="stat-icon">🤖</div>
+            <div class="stat-content">
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Agents IA</div>
+            </div>
+          </div>
+          <div class="stats-card floating-card card-2">
+            <div class="stat-icon">🔍</div>
+            <div class="stat-content">
+              <div class="stat-number">40+</div>
+              <div class="stat-label">Intégrations</div>
+            </div>
+          </div>
+          <div class="stats-card floating-card card-3">
+            <div class="stat-icon">🚀</div>
+            <div class="stat-content">
+              <div class="stat-number">2x</div>
+              <div class="stat-label">Plus rapide</div>
+            </div>
+          </div>
+          
+          <div class="main-visual">
+            <div class="visual-circle circle-1"></div>
+            <div class="visual-circle circle-2"></div>
+            <div class="visual-circle circle-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,14 @@
+<div #scrollArea class="hi-list">
+    <div *ngFor="let m of messages(); trackBy: track" class="mb-2">
+        <div [class]="bubbleClass(m.role)">
+            <div class="small text-muted mb-1">{{ m.role === 'user' ? 'You' : 'Assistant' }}</div>
+            <!-- Use innerHTML with formatted content -->
+            <div [innerHTML]="formatMessage(m.text)"></div>
+            <div class="small text-muted mt-1">{{ m.createdAt | date:'shortTime' }}</div>
+        </div>
+    </div>
+    <div class="hi-empty" *ngIf="!(messages()?.length)">
+        <p>No messages yet — start a conversation 💬</p>
+    </div>
+    <div #bottomAnchor></div>
+</div>

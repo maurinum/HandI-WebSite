@@ -1,0 +1,75 @@
+<div class="videos-page">
+  <section class="hero-section">
+    <div class="container">
+      <h1>{{ translate('videos.title') }}</h1>
+      <p>{{ translate('videos.subtitle') }}</p>
+    </div>
+  </section>
+
+  <section class="videos-content">
+    <div class="container">
+      <!-- Video Player Principal -->
+      <div class="video-player" *ngIf="selectedVideo">
+        <div class="player-wrapper">
+          <iframe 
+            [src]="getSafeUrl(selectedVideo.id)"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="video-info">
+          <h2>{{ selectedVideo.title }}</h2>
+          <p>{{ selectedVideo.description }}</p>
+        </div>
+      </div>
+
+      <!-- Liste des vidéos -->
+      <div class="videos-grid">
+        <div class="video-card" 
+             *ngFor="let video of youtubeService.videos()"
+             (click)="selectVideo(video)"
+             [class.active]="selectedVideo?.id === video.id">
+          <div class="video-thumbnail">
+            <img [src]="video.thumbnail" [alt]="video.title">
+            <div class="play-overlay">
+              <div class="play-icon">▶</div>
+            </div>
+          </div>
+          <div class="video-card-content">
+            <h3>{{ video.title }}</h3>
+            <p>{{ video.description | slice:0:100 }}{{ video.description.length > 100 ? '...' : '' }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Instructions pour ajouter des vidéos -->
+      <div class="info-section">
+        <h2>Comment ajouter vos vidéos YouTube ?</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Obtenez une clé API YouTube</h3>
+              <p>Rendez-vous sur Google Cloud Console et créez une clé API pour l'API YouTube Data v3</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Configurez le service</h3>
+              <p>Éditez le fichier <code>src/app/services/youtube.ts</code> et ajoutez votre clé API et Channel ID</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Synchronisation automatique</h3>
+              <p>Vos vidéos YouTube seront automatiquement récupérées et affichées sur cette page</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

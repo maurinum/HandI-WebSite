@@ -1,0 +1,73 @@
+<div class="pricing-page">
+  <section class="hero-section">
+    <div class="container">
+      <h1>{{ translate('pricing.title') }}</h1>
+      <p>{{ translate('pricing.subtitle') }}</p>
+    </div>
+  </section>
+
+  <section class="pricing-content">
+    <div class="container">
+      <div class="pricing-grid">
+        <div class="pricing-card" 
+             *ngFor="let plan of plans"
+             [class.popular]="plan.popular"
+             [style.--card-color]="plan.color">
+          <div class="popular-badge" *ngIf="plan.popular">
+            Recommandé
+          </div>
+          
+          <div class="plan-header">
+            <h3>{{ plan.nameKey ? translate(plan.nameKey) : plan.name }}</h3>
+            <div class="price">
+              <span class="amount">{{ plan.price }}</span>
+              <span class="period" *ngIf="plan.period">{{ plan.periodKey ? translate(plan.periodKey) : plan.period }}</span>
+            </div>
+          </div>
+
+          <ul class="features-list">
+            <li *ngFor="let feature of plan.features">
+              <span class="check-icon">✓</span>
+              {{ feature }}
+            </li>
+          </ul>
+
+          <a [routerLink]="plan.price === 'Sur mesure' ? '/contact' : '/contact'" 
+             class="btn-plan">
+            {{ plan.price === 'Sur mesure' ? translate('pricing.contact') : translate('pricing.choose') }}
+          </a>
+        </div>
+      </div>
+
+      <div class="faq-section">
+        <h2>Questions fréquentes</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>Puis-je changer de forfait à tout moment ?</h3>
+            <p>Oui, vous pouvez upgrader ou downgrader votre forfait à tout moment. Les changements prennent effet immédiatement.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Y a-t-il des frais de mise en place ?</h3>
+            <p>Non, il n'y a aucun frais de mise en place. Vous payez uniquement votre abonnement mensuel.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Quelle est la période d'engagement ?</h3>
+            <p>Nos forfaits sont mensuels sans engagement. Vous pouvez annuler à tout moment.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Proposez-vous une période d'essai ?</h3>
+            <p>Oui, nous offrons 14 jours d'essai gratuit sur tous nos forfaits, sans carte bancaire requise.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Les données sont-elles sécurisées ?</h3>
+            <p>Absolument. Toutes vos données sont chiffrées et hébergées sur vos propres serveurs ou dans un cloud sécurisé.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Quel support est inclus ?</h3>
+            <p>Le support par email est inclus dans tous les forfaits. Les plans Pro et Enterprise bénéficient d'un support prioritaire.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

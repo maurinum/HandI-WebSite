@@ -1,0 +1,10 @@
+<button class="hi-chat-btn btn btn-primary rounded-circle" (click)="toggle()" [attr.aria-expanded]="open()">
+    <!-- <span class="visually-hidden">Chat with me</span> -->
+    <!-- simple robot icon -->
+    <span class="hi-robot">🤖</span>
+</button>
+
+<!-- Panel -->
+<div class="hi-chat-panel" *ngIf="open()">
+    <app-chat-panel [sessionId]="sessionId()" (close)="toggle()"></app-chat-panel>
+</div>

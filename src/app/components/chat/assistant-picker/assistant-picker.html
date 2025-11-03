@@ -1,0 +1,15 @@
+<div class="assistant-picker">
+  <label for="assistant-select" class="form-label small mb-1">Assistant:</label>
+  <select 
+    id="assistant-select" 
+    class="form-select form-select-sm" 
+    [value]="selectedId" 
+    (change)="choose(+$any($event.target).value)">
+    <option [value]="0">Default Assistant</option>
+    <option *ngFor="let a of asst.assistants()" [value]="a.id">
+      {{ a.name }}
+    </option>
+  </select>
+  <div *ngIf="asst.loading()" class="small text-muted mt-1">Loading assistants...</div>
+  <div *ngIf="asst.error()" class="small text-danger mt-1">{{ asst.error() }}</div>
+</div>

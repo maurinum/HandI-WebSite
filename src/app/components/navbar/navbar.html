@@ -1,0 +1,38 @@
+<nav class="navbar">
+  <div class="container">
+    <div class="nav-wrapper">
+      <a routerLink="/" class="logo">
+        <span class="logo-text">H&I</span>
+        <span class="logo-subtitle">Humanité & IA</span>
+      </a>
+
+      <button class="menu-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-menu" [class.active]="isMenuOpen">
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          {{ translate('nav.home') }}
+        </a>
+        <a routerLink="/features" routerLinkActive="active">
+          {{ translate('nav.features') }}
+        </a>
+        <a routerLink="/videos" routerLinkActive="active">
+          {{ translate('nav.videos') }}
+        </a>
+        <a routerLink="/pricing" routerLinkActive="active">
+          {{ translate('nav.pricing') }}
+        </a>
+        <a routerLink="/contact" routerLinkActive="active">
+          {{ translate('nav.contact') }}
+        </a>
+        
+        <button class="lang-toggle" (click)="toggleLanguage()">
+          {{ langService.currentLang() === 'fr' ? 'AR' : 'FR' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>

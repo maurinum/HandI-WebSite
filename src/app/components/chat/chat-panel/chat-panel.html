@@ -1,0 +1,31 @@
+<div class="chat-panel card shadow-sm">
+    <!-- Header -->
+    <div class="chat-header">
+        <div class="header-top d-flex align-items-center justify-content-between mb-2">
+            <div class="d-flex align-items-center gap-2">
+                <img src="/logo.png" width="32" height="32" alt="H&I" class="logo" />
+                <span class="brand-name">H&I Assistant</span>
+            </div>
+            <button class="btn btn-sm btn-close-custom" (click)="close.emit()">✕</button>
+        </div>
+        <div class="header-bottom">
+            <app-assistant-picker (changed)="onAssistant($event)"></app-assistant-picker>
+        </div>
+    </div>
+
+    <!-- Messages area -->
+    <div class="chat-body">
+
+        <ul class="chat-list list-unstyled mb-0">
+            <app-message-list></app-message-list>
+            <div class="typing-indicator mt-2">
+                <app-typing-indicator [show]="typing"></app-typing-indicator>
+            </div>
+        </ul>
+    </div>
+
+    <!-- Footer / input -->
+    <div class="chat-footer border-top">
+        <app-message-input (sent)="onSend($event)"></app-message-input>
+    </div>
+</div>

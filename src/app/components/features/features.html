@@ -1,0 +1,69 @@
+<div class="features-page">
+  <section class="hero-section">
+    <div class="container">
+      <h1>{{ translate('features.title') }}</h1>
+      <p>Découvrez toutes les capacités de la plateforme H&I</p>
+    </div>
+  </section>
+
+  <section class="features-detail">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-detailed" *ngFor="let feature of features; let i = index"
+             [style.animation-delay]="(i * 0.1) + 's'">
+          <div class="feature-icon-large">{{ feature.icon }}</div>
+          <div class="feature-content">
+            <h3>{{ feature.titleKey ? translate(feature.titleKey) : feature.title }}</h3>
+            <p class="feature-desc">{{ feature.descKey ? translate(feature.descKey) : feature.desc }}</p>
+            <p class="feature-details">{{ feature.details }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tech-stack">
+    <div class="container">
+      <h2>Technologies & Intégrations</h2>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <h4>LLMs Supportés</h4>
+          <ul>
+            <li>OpenAI (GPT-4, GPT-4o)</li>
+            <li>Anthropic (Claude 3.5, Claude 4)</li>
+            <li>Mistral AI</li>
+            <li>DeepSeek</li>
+            <li>Modèles Open Source</li>
+          </ul>
+        </div>
+        <div class="tech-item">
+          <h4>Intégrations CRM</h4>
+          <ul>
+            <li>Salesforce</li>
+            <li>HubSpot</li>
+            <li>Zendesk</li>
+            <li>Pipedrive</li>
+          </ul>
+        </div>
+        <div class="tech-item">
+          <h4>Collaboration</h4>
+          <ul>
+            <li>Microsoft Teams</li>
+            <li>Slack</li>
+            <li>Google Workspace</li>
+            <li>Notion</li>
+          </ul>
+        </div>
+        <div class="tech-item">
+          <h4>Stockage</h4>
+          <ul>
+            <li>Google Drive</li>
+            <li>OneDrive</li>
+            <li>Dropbox</li>
+            <li>SharePoint</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

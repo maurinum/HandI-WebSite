@@ -1,0 +1,95 @@
+.hi-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hi-bubble {
+    max-width: 80%;
+    padding: 0.875rem 1rem;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+
+.hi-bubble .small {
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+
+.hi-left {
+    margin-right: auto;
+    background: #ffffff;
+    border-bottom-left-radius: 4px;
+}
+
+.hi-right {
+    margin-left: auto;
+    background: linear-gradient(135deg, #0a8ddf, #0fd3a0);
+    color: white;
+    border-bottom-right-radius: 4px;
+    box-shadow: 0 2px 12px rgba(10, 141, 223, 0.3);
+}
+
+.hi-right .small {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.hi-empty {
+    text-align: center;
+    color: #6c757d;
+    padding: 3rem 1rem;
+    font-size: 0.95rem;
+}
+
+.hi-empty p {
+    margin: 0;
+}
+
+/* Citation links styling */
+.hi-bubble .citation-link {
+    color: #0a8ddf;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0 0.2rem;
+    transition: all 0.2s;
+    border-radius: 4px;
+}
+
+.hi-bubble .citation-link:hover {
+    background: rgba(10, 141, 223, 0.1);
+    text-decoration: underline;
+}
+
+.hi-bubble sup {
+    font-size: 0.75em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+/* Different style for user vs assistant bubbles */
+.hi-right .citation-link {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.hi-right .citation-link:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Code blocks styling */
+.hi-bubble code {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+}
+
+.hi-right code {
+    background: rgba(255, 255, 255, 0.2);
+}
