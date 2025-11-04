@@ -135,7 +135,71 @@ export class LanguageService {
     'footer.legal': { en: 'Legal notice', fr: 'Mentions légales', ar: 'الشروط القانونية' },
     'footer.privacy': { en: 'Privacy policy', fr: 'Politique de confidentialité', ar: 'سياسة الخصوصية' },
     'footer.terms': { en: 'Terms of use', fr: 'Conditions d\'utilisation', ar: 'شروط الاستخدام' },
-    'footer.rights': { en: 'All rights reserved', fr: 'Tous droits réservés', ar: 'جميع الحقوق محفوظة' }
+    'footer.rights': { en: 'All rights reserved', fr: 'Tous droits réservés', ar: 'جميع الحقوق محفوظة' },
+    
+    // Home Page - Features Section
+    'home.features.tag': { en: 'Features', fr: 'Fonctionnalités', ar: 'الميزات' },
+    'home.features.subtitle': { 
+      en: 'Powerful tools to transform your business', 
+      fr: 'Des outils puissants pour transformer votre entreprise', 
+      ar: 'أدوات قوية لتحويل عملك' 
+    },
+    'home.features.learnmore': { en: 'Learn more', fr: 'En savoir plus', ar: 'اعرف المزيد' },
+    'home.features.discover': { 
+      en: 'Discover all features', 
+      fr: 'Découvrir toutes les fonctionnalités', 
+      ar: 'اكتشف جميع الميزات' 
+    },
+    
+    // Home Page - Why Choose Us Section
+    'home.why.tag': { en: 'Why H&I?', fr: 'Pourquoi H&I ?', ar: 'لماذا H&I؟' },
+    'home.why.title': { 
+      en: 'The complete AI solution for your business', 
+      fr: 'La solution IA complète pour votre entreprise', 
+      ar: 'حل الذكاء الاصطناعي الكامل لعملك' 
+    },
+    'home.why.subtitle': { 
+      en: 'H&I combines power and simplicity to offer you the best generative AI experience on the market.', 
+      fr: 'H&I combine puissance et simplicité pour vous offrir la meilleure expérience d\'IA générative du marché.', 
+      ar: 'تجمع H&I بين القوة والبساطة لتقدم لك أفضل تجربة ذكاء اصطناعي توليدي في السوق.' 
+    },
+    'home.why.tech.title': { en: 'Advanced Technology', fr: 'Technologie Avancée', ar: 'تقنية متقدمة' },
+    'home.why.tech.desc': { 
+      en: 'Proprietary solution developed with the latest AI innovations', 
+      fr: 'Solution propriétaire développée avec les dernières innovations en IA', 
+      ar: 'حل خاص تم تطويره بأحدث ابتكارات الذكاء الاصطناعي' 
+    },
+    'home.why.security.title': { en: 'Maximum Security', fr: 'Sécurité Maximale', ar: 'أمان أقصى' },
+    'home.why.security.desc': { 
+      en: 'Your data remains private with end-to-end encryption', 
+      fr: 'Vos données restent privées avec un chiffrement de bout en bout', 
+      ar: 'تبقى بياناتك خاصة مع التشفير من طرف إلى طرف' 
+    },
+    'home.why.multimodel.title': { en: 'Intelligent Multi-LLM', fr: 'Multi-LLM Intelligent', ar: 'نماذج لغوية متعددة ذكية' },
+    'home.why.multimodel.desc': { 
+      en: 'Compatible with GPT-4, Claude, Mistral and more', 
+      fr: 'Compatible avec GPT-4, Claude, Mistral et plus encore', 
+      ar: 'متوافق مع GPT-4 و Claude و Mistral والمزيد' 
+    },
+    'home.why.support.title': { en: 'Premium Support', fr: 'Support Premium', ar: 'دعم متميز' },
+    'home.why.support.desc': { 
+      en: 'Team of experts available to assist you', 
+      fr: 'Équipe d\'experts disponible pour vous accompagner', 
+      ar: 'فريق من الخبراء متاح لمساعدتك' 
+    },
+    'home.why.agents': { en: 'AI Agents', fr: 'Agents IA', ar: 'وكلاء ذكاء اصطناعي' },
+    'home.why.integrations': { en: 'Integrations', fr: 'Intégrations', ar: 'تكاملات' },
+    'home.why.faster': { en: 'Faster', fr: 'Plus rapide', ar: 'أسرع' },
+    
+    // Footer - Resources
+    'footer.resources': { en: 'Resources', fr: 'Ressources', ar: 'الموارد' },
+    'footer.documentation': { en: 'Documentation', fr: 'Documentation', ar: 'التوثيق' },
+    'footer.guide': { en: 'Getting Started', fr: 'Guide de démarrage', ar: 'دليل البدء' },
+    'footer.api': { en: 'API Reference', fr: 'API Reference', ar: 'مرجع API' },
+    'footer.blog': { en: 'Blog', fr: 'Blog', ar: 'المدونة' },
+    'footer.support': { en: 'Support', fr: 'Support', ar: 'الدعم' },
+    'footer.cookies': { en: 'Cookies', fr: 'Cookies', ar: 'ملفات تعريف الارتباط' },
+    'footer.gdpr': { en: 'GDPR', fr: 'RGPD', ar: 'اللائحة العامة لحماية البيانات' }
   };
 
   constructor() {
@@ -153,7 +217,22 @@ export class LanguageService {
     document.documentElement.dir = this.currentLang() === 'ar' ? 'rtl' : 'ltr';
   }
 
+  setLanguage(lang: 'en' | 'fr' | 'ar') {
+    this.currentLang.set(lang);
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  }
+
   translate(key: string): string {
     return this.translations[key]?.[this.currentLang()] || key;
+  }
+  
+  getLanguageName(lang: 'en' | 'fr' | 'ar'): string {
+    const names = {
+      en: 'English',
+      fr: 'Français',
+      ar: 'العربية'
+    };
+    return names[lang];
   }
 }

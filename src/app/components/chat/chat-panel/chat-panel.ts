@@ -38,6 +38,7 @@ export class ChatPanelComponent {
   }
 
   onSend(text: string) {
+    console.log("text",text)
     if (!this.sessionId) return;
     const assistantId = this.sessions.assistantId();
     this.chat.send(this.sessionId, text, assistantId);

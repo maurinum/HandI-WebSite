@@ -29,9 +29,22 @@
           {{ translate('nav.contact') }}
         </a>
         
-        <button class="lang-toggle" (click)="toggleLanguage()">
-          {{ langService.currentLang() === 'fr' ? 'AR' : 'FR' }}
-        </button>
+        <div class="lang-dropdown" [class.active]="isLangDropdownOpen">
+          <button class="lang-toggle" (click)="toggleLangDropdown()">
+            <span class="lang-icon">🌐</span>
+            {{ getLanguageName(langService.currentLang()) }}
+            <span class="dropdown-arrow">▼</span>
+          </button>
+          <div class="lang-menu" *ngIf="isLangDropdownOpen">
+            <button 
+              *ngFor="let lang of languages" 
+              class="lang-option"
+              [class.active]="langService.currentLang() === lang"
+              (click)="selectLanguage(lang)">
+              {{ getLanguageName(lang) }}
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -74,9 +74,9 @@
   <section class="features-preview">
     <div class="container">
       <div class="section-header scroll-reveal" data-reveal="fade-up">
-        <span class="section-tag">Fonctionnalités</span>
+        <span class="section-tag">{{ translate('home.features.tag') }}</span>
         <h2 class="section-title">{{ translate('features.title') }}</h2>
-        <p class="section-subtitle">Des outils puissants pour transformer votre entreprise</p>
+        <p class="section-subtitle">{{ translate('home.features.subtitle') }}</p>
       </div>
       
       <div class="features-grid">
@@ -90,14 +90,14 @@
           <h3>{{ translate(feature.titleKey) }}</h3>
           <p>{{ translate(feature.descKey) }}</p>
           <div class="feature-link">
-            <a routerLink="/features">En savoir plus →</a>
+            <a routerLink="/features">{{ translate('home.features.learnmore') }} →</a>
           </div>
         </div>
       </div>
       
       <div class="cta-section scroll-reveal" data-reveal="fade-up">
         <a routerLink="/features" class="btn btn-outline btn-large">
-          Découvrir toutes les fonctionnalités
+          {{ translate('home.features.discover') }}
           <span class="btn-arrow">→</span>
         </a>
       </div>
@@ -109,9 +109,9 @@
     <div class="container">
       <div class="why-content">
         <div class="why-text scroll-reveal" data-reveal="slide-right">
-          <span class="section-tag">Pourquoi H&I ?</span>
-          <h2>La solution IA complète pour votre entreprise</h2>
-          <p class="lead-text">H&I combine puissance et simplicité pour vous offrir la meilleure expérience d'IA générative du marché.</p>
+          <span class="section-tag">{{ translate('home.why.tag') }}</span>
+          <h2>{{ translate('home.why.title') }}</h2>
+          <p class="lead-text">{{ translate('home.why.subtitle') }}</p>
           
           <ul class="benefits-list">
             <li class="benefit-item scroll-reveal" data-reveal="slide-right" data-delay="0.1">
@@ -119,8 +119,8 @@
                 <span>⚡</span>
               </div>
               <div>
-                <strong>Technologie Avancée</strong>
-                <p>Solution propriétaire développée avec les dernières innovations en IA</p>
+                <strong>{{ translate('home.why.tech.title') }}</strong>
+                <p>{{ translate('home.why.tech.desc') }}</p>
               </div>
             </li>
             <li class="benefit-item scroll-reveal" data-reveal="slide-right" data-delay="0.2">
@@ -128,8 +128,8 @@
                 <span>🔒</span>
               </div>
               <div>
-                <strong>Sécurité Maximale</strong>
-                <p>Vos données restent privées avec un chiffrement de bout en bout</p>
+                <strong>{{ translate('home.why.security.title') }}</strong>
+                <p>{{ translate('home.why.security.desc') }}</p>
               </div>
             </li>
             <li class="benefit-item scroll-reveal" data-reveal="slide-right" data-delay="0.3">
@@ -137,8 +137,8 @@
                 <span>🎯</span>
               </div>
               <div>
-                <strong>Multi-LLM Intelligent</strong>
-                <p>Compatible avec GPT-4, Claude, Mistral et plus encore</p>
+                <strong>{{ translate('home.why.multimodel.title') }}</strong>
+                <p>{{ translate('home.why.multimodel.desc') }}</p>
               </div>
             </li>
             <li class="benefit-item scroll-reveal" data-reveal="slide-right" data-delay="0.4">
@@ -146,15 +146,15 @@
                 <span>💼</span>
               </div>
               <div>
-                <strong>Support Premium</strong>
-                <p>Équipe d'experts disponible pour vous accompagner</p>
+                <strong>{{ translate('home.why.support.title') }}</strong>
+                <p>{{ translate('home.why.support.desc') }}</p>
               </div>
             </li>
           </ul>
           
           <div class="cta-inline scroll-reveal" data-reveal="fade-up" data-delay="0.5">
             <a routerLink="/contact" class="btn btn-primary">
-              Demander une démo →
+              {{ translate('hero.demo') }} →
             </a>
           </div>
         </div>
@@ -164,21 +164,21 @@
             <div class="stat-icon">🤖</div>
             <div class="stat-content">
               <div class="stat-number">50+</div>
-              <div class="stat-label">Agents IA</div>
+              <div class="stat-label">{{ translate('home.why.agents') }}</div>
             </div>
           </div>
           <div class="stats-card floating-card card-2">
             <div class="stat-icon">🔍</div>
             <div class="stat-content">
               <div class="stat-number">40+</div>
-              <div class="stat-label">Intégrations</div>
+              <div class="stat-label">{{ translate('home.why.integrations') }}</div>
             </div>
           </div>
           <div class="stats-card floating-card card-3">
             <div class="stat-icon">🚀</div>
             <div class="stat-content">
               <div class="stat-number">2x</div>
-              <div class="stat-label">Plus rapide</div>
+              <div class="stat-label">{{ translate('home.why.faster') }}</div>
             </div>
           </div>
           

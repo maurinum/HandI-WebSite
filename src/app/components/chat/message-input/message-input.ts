@@ -1,7 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ChatService } from '../../../services/chat.service';
-import { ChatSessionService } from '../../../services/chat-session.service';
 
 @Component({
   selector: 'app-message-input',
@@ -14,19 +12,12 @@ export class MessageInputComponent {
   @Output() sent = new EventEmitter<string>();
   text = '';
 
-  constructor(private chat: ChatService, private sessions: ChatSessionService) { }
+  constructor() { }
 
   async send() {
     const t = this.text.trim();
     if (!t) return;
 
-    // Ensure session exists
-    const sessionId = await this.sessions.ensureSession();
-
-    // Use currently selected assistant
-    const assistantId = this.sessions.assistantId();
-
-    this.chat.send(sessionId, t, assistantId);
 
     this.sent.emit(t);
     this.text = '';
