@@ -6,6 +6,6 @@
 
 export const environment = {
     production: false,
-    apiBaseUrl: 'https://rafiqia.duckdns.org', // <- change me
+    apiBaseUrl: 'https://rafiqai.memoactai.com', // <- change me
     apiKey: 'on_NRDfFaiHCzhjjlukgnz6cbvT2p_8BTXOicjFJC0WVuB6cAdz3D_ZKTrVluI2215dx09FGxFNp0YjJKCHT_nJS5k89ZrtNZiGoqthoY4QxOPScKFN20k9oP7TQEUnbkx97F_aw7jPXKHp08NUxxCwUtXKc0i1CqboU08fakKz0e1PBo0qx91Cp4sDDPKQsiboMd4VKnzMyEq8gIYTKQMvVVoSq4IqVoHqRkXVhFOnFxGtUx38cQ4jaZ-8zdUrXMmC'                 // <- dev key (or load at runtime)
 };

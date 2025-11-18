@@ -2,8 +2,8 @@
   <div class="container">
     <div class="nav-wrapper">
       <a routerLink="/" class="logo">
-        <span class="logo-text">H&I</span>
-        <span class="logo-subtitle">Humanité & IA</span>
+        <img style="width: 60px;" src="logo-memoactai.png" alt="MemoActAI Logo" class="logo-image" />
+        <span class="logo-subtitle">MemoActAI</span>
       </a>
 
       <button class="menu-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen">
@@ -22,9 +22,9 @@
         <a routerLink="/videos" routerLinkActive="active">
           {{ translate('nav.videos') }}
         </a>
-        <a routerLink="/pricing" routerLinkActive="active">
+        <!-- <a routerLink="/pricing" routerLinkActive="active">
           {{ translate('nav.pricing') }}
-        </a>
+        </a> -->
         <a routerLink="/contact" routerLinkActive="active">
           {{ translate('nav.contact') }}
         </a>

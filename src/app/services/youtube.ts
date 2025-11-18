@@ -52,8 +52,8 @@ export class YoutubeService {
       this.videos.set([
         {
           id: 'dQw4w9WgXcQ',
-          title: 'Introduction à H&I - Plateforme IA',
-          description: 'Découvrez comment H&I transforme l\'utilisation de l\'intelligence artificielle',
+          title: 'Introduction à MemoActAI - Plateforme IA',
+          description: 'Découvrez comment MemoActAI transforme l\'utilisation de l\'intelligence artificielle',
           thumbnail: 'https://via.placeholder.com/480x360/667eea/ffffff?text=Video+1',
           publishedAt: new Date().toISOString()
         },
@@ -67,7 +67,7 @@ export class YoutubeService {
         {
           id: 'dQw4w9WgXcQ',
           title: 'Intégration avec vos outils',
-          description: 'Connectez H&I à vos applications métier préférées',
+          description: 'Connectez MemoActAI à vos applications métier préférées',
           thumbnail: 'https://via.placeholder.com/480x360/f093fb/ffffff?text=Video+3',
           publishedAt: new Date().toISOString()
         }

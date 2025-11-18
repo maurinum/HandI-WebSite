@@ -12,5 +12,5 @@ import { ChatWidgetComponent } from './components/chat/chat-widget/chat-widget';
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('H&I - Humanité et IA');
+  protected readonly title = signal('MemoActAI');
 }

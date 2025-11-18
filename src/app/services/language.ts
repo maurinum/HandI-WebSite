@@ -43,9 +43,9 @@ export class LanguageService {
       ar: 'ملايين نقاط البيانات الداخلية؟'
     },
     'intelligence.subtitle': {
-      en: 'H&I knows everything so you can stay focused on business priority',
-      fr: 'H&I connaît tout afin que vous puissiez rester concentré sur les priorités commerciales',
-      ar: 'H&I يعرف كل شيء حتى تتمكن من التركيز على أولويات العمل'
+      en: 'MemoActAI knows everything so you can stay focused on business priority',
+      fr: 'MemoActAI connaît tout afin que vous puissiez rester concentré sur les priorités commerciales',
+      ar: 'MemoActAI يعرف كل شيء حتى تتمكن من التركيز على أولويات العمل'
     },
     'intelligence.engagement': {
       en: 'Daily engagement rate',
@@ -127,9 +127,9 @@ export class LanguageService {
     // Footer
     'footer.about': { en: 'About', fr: 'À propos', ar: 'حول' },
     'footer.description': { 
-      en: 'H&I brings artificial intelligence to businesses with innovative and high-performance solutions.',
-      fr: 'H&I apporte l\'intelligence artificielle au service des entreprises avec des solutions innovantes et performantes.', 
-      ar: 'تقدم H&I الذكاء الاصطناعي في خدمة الشركات مع حلول مبتكرة وفعالة.' 
+      en: 'MemoActAI brings artificial intelligence to businesses with innovative and high-performance solutions.',
+      fr: 'MemoActAI apporte l\'intelligence artificielle au service des entreprises avec des solutions innovantes et performantes.', 
+      ar: 'تقدم MemoActAI الذكاء الاصطناعي في خدمة الشركات مع حلول مبتكرة وفعالة.' 
     },
     'footer.links': { en: 'Quick links', fr: 'Liens rapides', ar: 'روابط سريعة' },
     'footer.legal': { en: 'Legal notice', fr: 'Mentions légales', ar: 'الشروط القانونية' },
@@ -152,16 +152,16 @@ export class LanguageService {
     },
     
     // Home Page - Why Choose Us Section
-    'home.why.tag': { en: 'Why H&I?', fr: 'Pourquoi H&I ?', ar: 'لماذا H&I؟' },
+    'home.why.tag': { en: 'Why MemoActAI?', fr: 'Pourquoi MemoActAI ?', ar: 'لماذا MemoActAI؟' },
     'home.why.title': { 
       en: 'The complete AI solution for your business', 
       fr: 'La solution IA complète pour votre entreprise', 
       ar: 'حل الذكاء الاصطناعي الكامل لعملك' 
     },
     'home.why.subtitle': { 
-      en: 'H&I combines power and simplicity to offer you the best generative AI experience on the market.', 
-      fr: 'H&I combine puissance et simplicité pour vous offrir la meilleure expérience d\'IA générative du marché.', 
-      ar: 'تجمع H&I بين القوة والبساطة لتقدم لك أفضل تجربة ذكاء اصطناعي توليدي في السوق.' 
+      en: 'MemoActAI combines power and simplicity to offer you the best generative AI experience on the market.', 
+      fr: 'MemoActAI combine puissance et simplicité pour vous offrir la meilleure expérience d\'IA générative du marché.', 
+      ar: 'تجمع MemoActAI بين القوة والبساطة لتقدم لك أفضل تجربة ذكاء اصطناعي توليدي في السوق.' 
     },
     'home.why.tech.title': { en: 'Advanced Technology', fr: 'Technologie Avancée', ar: 'تقنية متقدمة' },
     'home.why.tech.desc': { 
