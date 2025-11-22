@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { LanguageService } from '../../services/language';
+import { EmailService } from '../../services/email.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -11,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class ContactComponent {
   langService = inject(LanguageService);
+  emailService = inject(EmailService);
 
   contactForm = {
     name: '',
@@ -21,26 +23,39 @@ export class ContactComponent {
   };
 
   submitted = false;
+  isLoading = false;
+  errorMessage = '';
   
   translate(key: string): string {
     return this.langService.translate(key);
   }
 
-  onSubmit() {
-    // Ici vous pouvez ajouter l'envoi du formulaire à votre backend
-    console.log('Form submitted:', this.contactForm);
-    this.submitted = true;
-    
-    // Réinitialiser après 3 secondes
-    setTimeout(() => {
-      this.submitted = false;
-      this.contactForm = {
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        message: ''
-      };
-    }, 3000);
+  async onSubmit() {
+    this.isLoading = true;
+    this.errorMessage = '';
+    this.submitted = false;
+
+    try {
+      const result = await this.emailService.sendContactForm(this.contactForm);
+      
+      if (result.success) {
+        this.submitted = true;
+        // Reset form data but keep submitted state true
+        this.contactForm = {
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          message: ''
+        };
+      } else {
+        this.errorMessage = result.message;
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      this.errorMessage = 'Une erreur est survenue. Veuillez réessayer.';
+    } finally {
+      this.isLoading = false;
+    }
   }
 }

@@ -11,7 +11,7 @@
       <div class="contact-grid">
         <!-- Formulaire de contact -->
         <div class="contact-form-wrapper">
-          <form class="contact-form" (ngSubmit)="onSubmit()" #form="ngForm">
+          <form class="contact-form" (ngSubmit)="onSubmit()" #form="ngForm" *ngIf="!submitted">
             <div class="form-group">
               <label for="name">{{ translate('contact.name') }}</label>
               <input 
@@ -68,14 +68,19 @@
             <button 
               type="submit" 
               class="submit-btn"
-              [disabled]="!form.valid">
-              {{ translate('contact.send') }}
+              [disabled]="!form.valid || isLoading">
+              <span *ngIf="!isLoading">{{ translate('contact.send') }}</span>
+              <span *ngIf="isLoading">Envoi en cours...</span>
             </button>
 
-            <div class="success-message" *ngIf="submitted">
-              ✓ Message envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.
+            <div class="error-message" *ngIf="errorMessage">
+              ✗ {{ errorMessage }}
             </div>
           </form>
+
+          <div class="success-message" *ngIf="submitted">
+            ✓ Message envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.
+          </div>
         </div>
 
         <!-- Informations de contact -->
@@ -83,14 +88,13 @@
           <div class="info-card">
             <div class="info-icon">📧</div>
             <h3>Email</h3>
-            <p>contact@hi-platform.com</p>
-            <p>support@hi-platform.com</p>
+            <p>contact@memoactai.com</p>
           </div>
 
           <div class="info-card">
             <div class="info-icon">📱</div>
             <h3>Téléphone</h3>
-            <p>+222 XX XX XX XX</p>
+            <p>+222 46 20 24 64</p>
             <p>Lun - Ven: 9h - 18h</p>
           </div>
 
@@ -100,7 +104,7 @@
             <p>Nouakchott, Mauritanie</p>
           </div>
 
-          <div class="info-card social-card">
+          <!-- <div class="info-card social-card">
             <div class="info-icon">🌐</div>
             <h3>Réseaux sociaux</h3>
             <div class="social-links">
@@ -109,7 +113,7 @@
               <a href="#" class="social-link">YouTube</a>
               <a href="#" class="social-link">GitHub</a>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
