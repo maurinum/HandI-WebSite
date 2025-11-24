@@ -2,11 +2,92 @@
     position: static;
 }
 
-/* Floating chat button */
-.hi-chat-btn {
+/* Chat widget container */
+.chat-widget-container {
     position: fixed;
     right: 24px;
     bottom: 24px;
+    z-index: 2147483001;
+}
+
+/* Notification bubble */
+.chat-notification {
+    position: absolute;
+    right: 80px;
+    bottom: 15px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    padding: 0;
+    max-width: 280px;
+    z-index: 2147483002;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.notification-content {
+    position: relative;
+    padding: 16px 16px;
+    width: max-content;
+}
+
+.notification-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d3748;
+    line-height: 1.4;
+    display: block;
+}
+
+.notification-arrow {
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid white;
+    filter: drop-shadow(2px 0 2px rgba(0, 0, 0, 0.1));
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Pulse ring animation */
+.pulse-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    border: 3px solid #0a8ddf;
+    border-radius: 50%;
+    animation: pulse 2s ease-out infinite;
+    pointer-events: none;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Floating chat button */
+.hi-chat-btn {
+    position: relative;
     width: 64px;
     height: 64px;
     display: grid;
@@ -18,7 +99,7 @@
     box-shadow: 0 8px 32px rgba(10, 141, 223, 0.4);
     cursor: pointer;
     pointer-events: auto;
-    z-index: 2147483001;
+    z-index: 2147483003;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -76,6 +157,21 @@
 
 /* Responsive design */
 @media (max-width: 768px) {
+    .chat-widget-container {
+        right: 16px;
+        bottom: 16px;
+    }
+
+    .chat-notification {
+        right: 75px;
+        bottom: 10px;
+        max-width: 200px;
+    }
+
+    .notification-text {
+        font-size: 13px;
+    }
+
     .hi-chat-panel {
         right: 0;
         bottom: 0;
@@ -85,10 +181,5 @@
         height: 100vh;
         max-height: 100vh;
         border-radius: 0;
-    }
-    
-    .hi-chat-btn {
-        right: 16px;
-        bottom: 16px;
     }
 }

@@ -199,7 +199,14 @@ export class LanguageService {
     'footer.blog': { en: 'Blog', fr: 'Blog', ar: 'المدونة' },
     'footer.support': { en: 'Support', fr: 'Support', ar: 'الدعم' },
     'footer.cookies': { en: 'Cookies', fr: 'Cookies', ar: 'ملفات تعريف الارتباط' },
-    'footer.gdpr': { en: 'GDPR', fr: 'RGPD', ar: 'اللائحة العامة لحماية البيانات' }
+    'footer.gdpr': { en: 'GDPR', fr: 'RGPD', ar: 'اللائحة العامة لحماية البيانات' },
+    
+    // Chat Widget
+    'chat.notification': { 
+      en: 'Chat with me to learn more about us!', 
+      fr: 'Chattez avec moi pour en savoir plus sur nous !', 
+      ar: 'تحدث معي لمعرفة المزيد عنا!' 
+    }
   };
 
   constructor() {

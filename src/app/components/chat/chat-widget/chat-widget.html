@@ -1,8 +1,21 @@
-<button class="hi-chat-btn btn btn-primary rounded-circle" (click)="toggle()" [attr.aria-expanded]="open()">
-    <!-- <span class="visually-hidden">Chat with me</span> -->
-    <!-- simple robot icon -->
-    <span class="hi-robot">🤖</span>
-</button>
+<div class="chat-widget-container">
+    <!-- Notification bubble -->
+    <div class="chat-notification" *ngIf="showNotification() && !open()" [@fadeSlide]>
+        <div class="notification-content">
+            <span class="notification-text">{{ langService.translate('chat.notification') }}</span>
+            <div class="notification-arrow"></div>
+        </div>
+    </div>
+
+    <!-- Pulse ring animation -->
+    <div class="pulse-ring" *ngIf="showNotification() && !open()"></div>
+
+    <button class="hi-chat-btn btn btn-primary rounded-circle" (click)="toggle()" [attr.aria-expanded]="open()">
+        <!-- <span class="visually-hidden">Chat with me</span> -->
+        <!-- simple robot icon -->
+        <span class="hi-robot">🤖</span>
+    </button>
+</div>
 
 <!-- Panel -->
 <div class="hi-chat-panel" *ngIf="open()">

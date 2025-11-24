@@ -13,8 +13,8 @@ export interface YouTubeVideo {
 })
 export class YoutubeService {
   // Remplacez par votre clé API YouTube et votre Channel ID
-  private API_KEY = 'VOTRE_CLE_API_YOUTUBE';
-  private CHANNEL_ID = 'VOTRE_CHANNEL_ID';
+  private API_KEY = 'AIzaSyCXf4ZoXUdxVKFnmlxdXWTw8AYc7BibrZc';
+  private CHANNEL_ID = 'UCBhcUhKowYEhI-Pq-EGXuXA';
   
   videos = signal<YouTubeVideo[]>([]);
   
@@ -25,15 +25,17 @@ export class YoutubeService {
 
   async loadVideos() {
     try {
-      // Pour le moment, utilisez des vidéos de démonstration
-      // Décommentez le code ci-dessous après avoir configuré votre clé API
-      
-      /*
+      // Chargement des vraies vidéos depuis YouTube API
       const response = await fetch(
         `https://www.googleapis.com/youtube/v3/search?key=${this.API_KEY}&channelId=${this.CHANNEL_ID}&part=snippet,id&order=date&maxResults=20`
       );
       
       const data = await response.json();
+      
+      if (data.error) {
+        console.error('Erreur API YouTube:', data.error);
+        return;
+      }
       
       const videoList: YouTubeVideo[] = data.items
         .filter((item: any) => item.id.kind === 'youtube#video')
@@ -46,32 +48,6 @@ export class YoutubeService {
         }));
       
       this.videos.set(videoList);
-      */
-      
-      // Vidéos de démonstration
-      this.videos.set([
-        {
-          id: 'dQw4w9WgXcQ',
-          title: 'Introduction à MemoActAI - Plateforme IA',
-          description: 'Découvrez comment MemoActAI transforme l\'utilisation de l\'intelligence artificielle',
-          thumbnail: 'https://via.placeholder.com/480x360/667eea/ffffff?text=Video+1',
-          publishedAt: new Date().toISOString()
-        },
-        {
-          id: 'dQw4w9WgXcQ',
-          title: 'Créer votre premier Agent IA',
-          description: 'Tutoriel complet pour créer et configurer un agent IA personnalisé',
-          thumbnail: 'https://via.placeholder.com/480x360/764ba2/ffffff?text=Video+2',
-          publishedAt: new Date().toISOString()
-        },
-        {
-          id: 'dQw4w9WgXcQ',
-          title: 'Intégration avec vos outils',
-          description: 'Connectez MemoActAI à vos applications métier préférées',
-          thumbnail: 'https://via.placeholder.com/480x360/f093fb/ffffff?text=Video+3',
-          publishedAt: new Date().toISOString()
-        }
-      ]);
     } catch (error) {
       console.error('Erreur lors du chargement des vidéos:', error);
     }

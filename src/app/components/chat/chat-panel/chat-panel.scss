@@ -48,6 +48,8 @@
     width: 32px;
     height: 32px;
     object-fit: contain;
+    display: block;
+    flex-shrink: 0;
 }
 
 .chat-header .logo:hover {
@@ -60,8 +62,10 @@
     font-size: 1rem;
     letter-spacing: 0.3px;
     color: #ffffff;
-    line-height: 1.2;
+    line-height: 32px;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
 }
 
 .btn-close-custom {
